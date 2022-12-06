@@ -1,0 +1,16 @@
+file = open("task.txt", "r")
+
+data = file.read()
+words = data.split()
+
+count = 0
+new_file = open("newfile.txt","a")
+
+for word in words:
+    count += 1
+    if word == "python" or word == "Python":
+        word = "Javascript"
+    new_file.write(f"{word} ")
+    if count == 10:
+        new_file.write("\n")
+        count = 0 
